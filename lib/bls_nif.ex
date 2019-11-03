@@ -17,6 +17,22 @@ defmodule BlsNif do
 
   def g2add(a,b), do: nif_g2add(a,b)
 
+  def g1sub(a,b) when is_binary(a) and is_binary(b) do
+    a = to_charlist(a)
+    b = to_charlist(b)
+    nif_g1sub(a,b)
+  end
+
+  def g1sub(a,b), do: nif_g1sub(a,b)
+
+  def g2sub(a,b) when is_binary(a) and is_binary(b) do
+    a = to_charlist(a)
+    b = to_charlist(b)
+    nif_g2sub(a,b)
+  end
+
+  def g2sub(a,b), do: nif_g2sub(a,b)
+
   def g1mul(a,b) when is_binary(a) and is_binary(b) do
     a = to_charlist(a)
     b = to_charlist(b)

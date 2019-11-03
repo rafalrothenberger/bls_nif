@@ -13,6 +13,14 @@ defmodule BlsNif.Nif do
     raise "NIF g2add/2 not implemented"
   end
 
+  def nif_g1sub(_, _) do
+    raise "NIF g1sub/2 not implemented"
+  end
+
+  def nif_g2sub(_, _) do
+    raise "NIF g1sub/2 not implemented"
+  end
+
   def nif_g1mul(_, _) do
     raise "NIF g1mul/2 not implemented"
   end
