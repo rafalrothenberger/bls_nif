@@ -1,0 +1,35 @@
+defmodule BlsNif.Nif do
+  @on_load :load_nifs
+
+  def load_nifs do
+    :erlang.load_nif('./priv/nifs/bls', 0)
+  end
+
+  def nif_g1add(_, _) do
+    raise "NIF g1add/2 not implemented"
+  end
+
+  def nif_g2add(_, _) do
+    raise "NIF g2add/2 not implemented"
+  end
+
+  def nif_g1mul(_, _) do
+    raise "NIF g1mul/2 not implemented"
+  end
+
+  def nif_g2mul(_, _) do
+    raise "NIF g2mul/2 not implemented"
+  end
+
+  def nif_g1hash(_, _) do
+    raise "NIF g1hash/2 not implemented"
+  end
+
+  def nif_g2hash(_, _) do
+    raise "NIF g2hash/2 not implemented"
+  end
+
+  def nif_pairing(_, _) do
+    raise "NIF pair/2 not implemented"
+  end
+end

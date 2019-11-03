@@ -134,13 +134,13 @@ pairing(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
 
 static ErlNifFunc nif_funcs[] = {
     // {erl_function_name, erl_function_arity, c_function}
-    {"_g1add", 2, g1add},
-    {"_g2add", 2, g2add},
-    {"_g1mul", 2, g1mul},
-    {"_g2mul", 2, g2mul},
-    {"_g1hash", 2, g1hash},
-    {"_g2hash", 2, g2hash},
-    {"_pairing", 2, pairing},
+    {"nif_g1add", 2, g1add},
+    {"nif_g2add", 2, g2add},
+    {"nif_g1mul", 2, g1mul},
+    {"nif_g2mul", 2, g2mul},
+    {"nif_g1hash", 2, g1hash},
+    {"nif_g2hash", 2, g2hash},
+    {"nif_pairing", 2, pairing},
 };
 
-ERL_NIF_INIT(Elixir.BlsNif, nif_funcs, &load, NULL, &upgrade, &unload)
+ERL_NIF_INIT(Elixir.BlsNif.Nif, nif_funcs, &load, NULL, &upgrade, &unload)
