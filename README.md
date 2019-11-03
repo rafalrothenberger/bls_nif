@@ -1,6 +1,6 @@
 # BlsNif
 
-**TODO: Add description**
+This library aims to create basic binding from [c ApI of mcl library by herumi](https://github.com/herumi/mcl) to Elixir using NIFs.
 
 ## Installation
 
