@@ -5,6 +5,22 @@ defmodule BlsNif.Nif do
     :erlang.load_nif('./priv/nifs/bls', 0)
   end
 
+  def nif_g1neg(_) do
+    raise "NIF g1neg/1 not implemented"
+  end
+
+  def nif_g2neg(_) do
+    raise "NIF g2neg/1 not implemented"
+  end
+
+  def nif_g1dbl(_) do
+    raise "NIF g1dbl/1 not implemented"
+  end
+
+  def nif_g2dbl(_) do
+    raise "NIF g2dbl/1 not implemented"
+  end
+
   def nif_g1add(_, _) do
     raise "NIF g1add/2 not implemented"
   end
