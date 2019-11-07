@@ -10,7 +10,7 @@ defmodule BlsNif.MixProject do
       deps: deps(),
       compilers: [:elixir_make] ++ Mix.compilers,
       # Make config
-      make_makefile: "nifs/Makefile",
+      make_makefile: "src/Makefile",
       make_clean: ["clean"],
     ]
   end
