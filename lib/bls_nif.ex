@@ -62,13 +62,15 @@ defmodule BlsNif do
   end
 
   def g1hash(s) when is_binary(s) do
-    to_string nif_g1hash(s, byte_size(s))
+    s = to_charlist(s)
+    to_string(nif_g1hash(s, length(s)))
   end
 
   def g1hash(_), do: raise "g1hash/1 requires binary on input"
 
   def g2hash(s) when is_binary(s) do
-    to_string nif_g2hash(s, byte_size(s))
+    s = to_charlist(s)
+    to_string(nif_g2hash(s, length(s)))
   end
 
   def g2hash(_), do: raise "g2hash/1 requires binary on input"
