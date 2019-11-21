@@ -62,14 +62,14 @@ defmodule BlsNif do
   end
 
   def g1hash(s) when is_binary(s) do
-    s = to_charlist(s)
+    s = :binary.bin_to_list(s)
     to_string(nif_g1hash(s, length(s)))
   end
 
   def g1hash(_), do: raise "g1hash/1 requires binary on input"
 
   def g2hash(s) when is_binary(s) do
-    s = to_charlist(s)
+    s = :binary.bin_to_list(s)
     to_string(nif_g2hash(s, length(s)))
   end
 
