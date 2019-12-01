@@ -162,6 +162,22 @@ g2mul(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
 }
 
 static ERL_NIF_TERM
+rhash(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
+{
+    mclBnFr a;
+    unsigned long len;
+    enif_get_ulong(env, argv[1], &len);
+
+    char input[len+1], aStr[100] = {0};
+    enif_get_string(env, argv[0], input, len + 1, ERL_NIF_LATIN1);
+
+    mclBnFr_setHashOf(&a, input, len);
+    mclBnFr_getStr(aStr, 100, &a, 10);
+
+    return enif_make_string(env, aStr, ERL_NIF_LATIN1);
+}
+
+static ERL_NIF_TERM
 g1hash(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
 {
     mclBnG1 a;
@@ -225,6 +241,7 @@ static ErlNifFunc nif_funcs[] = {
     {"nif_g2sub", 2, g2sub},
     {"nif_g1mul", 2, g1mul},
     {"nif_g2mul", 2, g2mul},
+    {"nif_rhash", 2, rhash},
     {"nif_g1hash", 2, g1hash},
     {"nif_g2hash", 2, g2hash},
     {"nif_pairing", 2, pairing},

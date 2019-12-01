@@ -45,6 +45,10 @@ defmodule BlsNif.Nif do
     raise "NIF g2mul/2 not implemented"
   end
 
+  def nif_rhash(_, _) do
+    raise "NIF rhash/2 not implemented"
+  end
+
   def nif_g1hash(_, _) do
     raise "NIF g1hash/2 not implemented"
   end

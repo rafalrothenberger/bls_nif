@@ -61,6 +61,11 @@ defmodule BlsNif do
     to_string nif_g2mul(a,b)
   end
 
+  def rhash(s) when is_binary(s) do
+    s = :binary.bin_to_list(s)
+    to_string(nif_rhash(s, length(s)))
+  end
+
   def g1hash(s) when is_binary(s) do
     s = :binary.bin_to_list(s)
     to_string(nif_g1hash(s, length(s)))
